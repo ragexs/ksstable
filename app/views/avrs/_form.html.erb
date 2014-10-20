@@ -1,0 +1,51 @@
+<%= form_for(@avr) do |f| %>
+    <% if @avr.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@avr.errors.count, "error") %> prohibited this avr from being saved:</h2>
+
+          <ul>
+            <% @avr.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <% if @avr.mmm %>
+        <div class="field">
+          <%= f.label :Адрес %><br>
+          <%= f.hidden_field :mmm_id %>
+          <b><%= @avr.mmm.display %></b>
+        </div>
+    <% else %>
+        <div class="field">
+          <%= f.label :mmm %><br>
+          <%= f.collection_select :mmm_id, Mmm.order(:id), :id, :display, {}, {multiple: false} %>
+        </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :Тип_Аварии %><br>
+      <%= f.text_field :type_avr %>
+    </div>
+    <div class="field">
+      <%= f.label :Материал %><br>
+      <%= f.text_field :material %>
+    </div>
+    <div class="field">
+      <%= f.label :Комментарий %><br>
+      <%= f.text_area :comment %>
+    </div>
+    <div class="field">
+      <%= f.label :Исполнитель %><br>
+      <%= f.collection_select :user_id, User.order(:id), :id, :email, {}, {multiple: false} %>
+    </div>
+    <div class="field">
+      <%= f.label :Дата_Аварии %><br>
+      <%= f.datetime_select :date_on %>
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

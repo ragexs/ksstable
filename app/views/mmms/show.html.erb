@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mdu:</strong>
+  <%= @mmm.mdu %>
+</p>
+
+<p>
+  <strong>Адрес:</strong>
+  <%= @mmm.adress %>
+</p>
+
+<p>
+  <strong>Подъезд:</strong>
+  <%= @mmm.porch %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @mmm.ip %>
+</p>
+
+<p>
+  <strong>Sys name:</strong>
+  <%= @mmm.sys_name %>
+</p>
+
+<p>
+  <strong>Доступ:</strong>
+  <%= @mmm.ingress %>
+</p>
+
+<p>
+  <strong>Mod:</strong>
+  <%= @mmm.mod %>
+</p>
+
+<%= link_to 'Редактировать', edit_mmm_path(@mmm) %> |
+<%= link_to 'Назад', mmms_path %>

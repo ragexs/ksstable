@@ -1,0 +1,25 @@
+<h6>Аварии</h6>
+
+<table id="avrs" class="display" data-source="<%= avrs_url(format: "json") %>" data-options="<%= @filter_options.to_json %>">
+  <thead>
+  <tr>
+    <th>Mdu</th>
+    <th>Адрес</th>
+    <th>Тип аварии</th>
+    <th>Материалы</th>
+    <th>Комментарий</th>
+    <th>Исполнитель</th>
+    <th>Время поступления аварии</th>
+    <th>Время зактытия аварии</th>
+    <th>Закрыть Аварию!</th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Avr', new_avr_path %>

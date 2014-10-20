@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ksstable</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <% if user_signed_in? %>
+      <span>Здравствуйте, <%= current_user.email %></span>
+      <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+  <% else %>
+      <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+  <% end %>
+  <span style="arial:Monotype Corsiva;color:lawngreen ;font-size:25px"> <%= link_to 'Аварии', avrs_path %></span>
+  <span style="arial:Monotype Corsiva;color:lawngreen ;font-size:25px"> <%= link_to 'База', mmms_path %></span>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
